@@ -1,2 +1,15 @@
 # Campus-Navigation-System-C
  本项目为 **大学校园导航系统**，使用 **C语言** 实现，目标是帮助用户在校园内进行路径查询、景点浏览、多景点路线规划等操作。   项目支持 **数据加载、最短路径查询（Dijkstra）、多景点最优路径（TSP 动态规划）** 等功能，同时具备文件读写与结构化数据管理能力。
+
+## Project Structure
+
+- `include/` — Header files  
+- `src/` — C source files  
+- `data/` — Map data  
+- `test/` — Unit tests  
+- `Makefile` — Build script
+
+## How to Build
+
+```bash
+make
