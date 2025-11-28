@@ -15,23 +15,25 @@
  */
 
 #include <stdio.h>
-#include "map.h"
+#include <stdlib.h>
+#include <string.h>
+#include "../include/map.h"
 
-void loadMapData(const char *filename, Graph *g) {
+void loadMapData(Graph *g, const char *filename) {
     FILE *fp = fopen(filename, "r");
     if (!fp) {
-        printf("无法打开地图文件：%s\n", filename);
+        printf("无法打开地图数据文件：%s\n", filename);
         return;
     }
 
-    int n;
-    fscanf(fp, "%d", &n);
-    initGraph(g, n);
+    int id;
+    char name[100];
+    char desc[200];
 
-    int u, v, w;
-    while (fscanf(fp, "%d %d %d", &u, &v, &w) == 3) {
-        addEdge(g, u, v, w);
+    while (fscanf(fp, "%d \"%[^\"]\" \"%[^\"]\"\n", &id, name, desc) == 3) {
+        AddScenic(g, id, name, desc);
     }
 
     fclose(fp);
 }
+

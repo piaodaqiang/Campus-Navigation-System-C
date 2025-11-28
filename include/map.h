@@ -13,6 +13,7 @@
 
 #include "graph.h"
 
-void loadMapData(const char *filename, Graph *g);
+void loadMapData(Graph *g, const char *filename);
+
 
 #endif

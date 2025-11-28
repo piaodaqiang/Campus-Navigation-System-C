@@ -8,18 +8,23 @@
  * - 提供简单菜单（后续可扩展）
  */
 
+#include "../include/graph.h"
+#include "../include/map.h"
+#include "../include/navigation.h"
 #include <stdio.h>
-#include "map.h"
-#include "navigation.h"
 
 int main() {
     Graph g;
-    loadMapData("data/map_data.txt", &g);
+    InitGraph(&g);
 
-    printf("校园导航系统初始化完成！\n");
-    printf("示例：查询 0 到 3 的最短路径（算法未实现）\n");
+    // 加载 map_data.txt 数据
+    loadMapData(&g, "data/map_data.txt");
 
-    findShortestPath(&g, 0, 3);
+    printf("地图数据加载完毕！\n");
+
+    // 后面你会写菜单
+    MainMenu(&g);
 
     return 0;
 }
+

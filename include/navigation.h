@@ -14,5 +14,10 @@
 
 void findShortestPath(Graph *g, int start, int end);
 void displayPath(int *path, int length);
+void MainMenu(Graph *g);
+
+void printAllScenic(Graph *g);
+void queryScenic(Graph *g);
+void shortestPath(Graph *g);
 
 #endif
